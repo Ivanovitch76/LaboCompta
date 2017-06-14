@@ -3,7 +3,11 @@ package Main;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		User ui = new User();
+		Vue vue = new Vue();
+		
+		vue.getScreenDebut();
+//		System.out.println(vue.getScreenDebut());
 
 	}
 

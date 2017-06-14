@@ -1,3 +1,8 @@
 Scenario 1 :
 
 L'utilisateur introduit un numéro de compte général valable et subdivisable et le système affiche un message de validation.
+	1. L'ordinateur affiche un message 'Le numéro de compte doit-il être subdivisable?
+	2. L'utilisateur introduit 'oui'
+	3. L'ordinateur affiche un message 'Introduisez un numéro de compte général : '
+	4. L'utilisateur introduit un numéro '1234'
+	5. L'ordinateur affiche un message 'numéro de compte général valide'
