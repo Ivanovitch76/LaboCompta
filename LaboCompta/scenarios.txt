@@ -1,0 +1,3 @@
+Scenario 1 :
+
+L'utilisateur introduit un numéro de compte général valable et subdivisable et le système affiche un message de validation.
