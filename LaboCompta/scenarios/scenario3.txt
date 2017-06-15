@@ -1,4 +1,4 @@
-Scenario 2 :
+Scenario 3 :
 
 L'utilisateur introduit un numéro de compte général et non-subdivisable et le système affiche un message de validation ou d'erreur en fonction du numéro introduit
 	1. L'ordinateur affiche un message 'Le numéro de compte doit-il être subdivisable?

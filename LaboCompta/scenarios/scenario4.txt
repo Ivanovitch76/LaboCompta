@@ -1,0 +1,13 @@
+Scenario 4 :
+
+On ajoute une étape d'introduction d'un libellé pour le compte. Le système affiche un message d'erreur ou non en fonction de sa validité.
+	1. L'ordinateur affiche un message 'Le numéro de compte doit-il être subdivisable?
+	2. L'utilisateur introduit 'non'
+	3. L'ordinateur affiche un message 'Introduisez un numéro de compte général : '
+	4. L'utilisateur introduit un numéro '123456'
+	5. L'ordinateur affiche un message 'numéro de compte général valide'
+	6. L'ordinateur affiche un message 'Introduisez un libellé : '
+	7. L'utilisateur introduit un libellé 'abc'
+	8. situation ok
+	9. L'utilisateur introduit un libellé '   '
+	10. L'ordinateur affiche un message 'Libellé incohérent, veuillez mettre au moins un caractère alphanumérique'
