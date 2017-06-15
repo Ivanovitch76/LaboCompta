@@ -9,6 +9,7 @@ public class User {
 	VueMenu vueM = new VueMenu();
 	Scanner scan = new Scanner(System.in);
 	String rep1 = new String();
+	DispatchMenu dM = new DispatchMenu();
 	
 	
 	public void setId(String id) {
@@ -26,8 +27,8 @@ public class User {
 		rep1 = scan.nextLine();	
 		CtrlMenu.isValid(rep1);
 		if (CtrlMenu.isValid(rep1)){
-			DispatchMenu.getFirstChoice(rep1);
-			System.out.print(vueM.getMenuCG());
+			dM.getFirstChoice(rep1);
+			System.out.print(dM.getFirstChoice(rep1));
 			rep1 = scan.nextLine();				
 		} else {
 			System.out.println("Votre choix ne fait pas partie de la liste. Veuillez choisir un numéro entre 1 et 5");
