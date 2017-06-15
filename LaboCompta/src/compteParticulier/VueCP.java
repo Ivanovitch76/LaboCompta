@@ -8,6 +8,7 @@ public class VueCP {
     Object String = null;
     String rep1 = new String();
 	CtrlCP ctrl = new CtrlCP();
+	String valid = new String(); 
 
 	public VueCP() {
 	}
@@ -28,36 +29,51 @@ public class VueCP {
 	private void getScreenNum(){
         String rep2 = new String(); 
         String rep3 = new String(); 
-		System.out.println("Introduisez un numéro de compte général : ");
+		System.out.print("Introduisez un numéro de compte général : ");
 		rep2 = sc.nextLine();
 		if (!ctrl.isValidNum(rep1, rep2)){
-			System.out.println("Mauvais numéro. Voulez-vous en entrer un nouveau?");
+			System.out.print("Mauvais numéro. Voulez-vous en entrer un nouveau?  ");
 			rep3 = sc.nextLine();
-			if (!ctrl.isValidSub(rep3)){
-				System.out.println("Veuillez entrer une réponse valide (oui/non)");
-				getScreenNum();
+			valid = rep3;	
+			getScreenRepValide();
+			getScreenNum();
 			} else {	
 				if (rep3.equalsIgnoreCase("oui"))
 					getScreenNum();
 			}	
-	    } else {
-	    	getScreenLibel();
+
 	    }		
-	}
+
+
 
 	private void getScreenLibel() {
         String libel = new String(); 
         String rep = new String(); 
         
-		System.out.println("Introduisez un nom pour le compte : ");
+		System.out.print("Introduisez un nom pour le compte : ");
 		libel = sc.nextLine();
 		if (!ctrl.isValidLibel(libel)){
 			System.out.println("Libellé incohérent, veuillez mettre au moins un caractère alphanumérique");	
-			System.out.println("Voulez-vous entrer un nouveau nom pour le compte?");
+			System.out.print("Voulez-vous entrer un nouveau nom pour le compte?  ");
 			rep = sc.nextLine();
+			valid = rep;
+			getScreenRepValide();
+			getScreenLibel();
+			} else {			
 			if (rep.equalsIgnoreCase("oui"))
-				getScreenLibel();				
-		} 
+				getScreenLibel();	
+		}
+		 
+		
+	}
+	
+	private void getScreenRepValide() {
+		if (!ctrl.isValidSub(valid)){
+			System.out.print("Veuillez entrer une réponse valide (oui/non)   ");
+			valid = sc.nextLine();
+			getScreenRepValide();
+		}
+		
 		
 	}
 

@@ -11,6 +11,7 @@ public class VueCG {
     Object String = null;
     String rep1 = new String();
 	CtrlCG ctrl = new CtrlCG(String);
+	String valid = new String(); 
 
 	public VueCG() {
 		this.ui = null;
@@ -31,10 +32,10 @@ public class VueCG {
 	private void getScreenNum(){
         String rep2 = new String(); 
         String rep3 = new String(); 
-		System.out.println("Introduisez un numéro de compte général : ");
+		System.out.print("Introduisez un numéro de compte général : ");
 		rep2 = sc.nextLine();
 		if (!ctrl.isValidNum(rep1, rep2)){
-			System.out.println("Mauvais numéro. Voulez-vous en entrer un nouveau?");
+			System.out.print("Mauvais numéro. Voulez-vous en entrer un nouveau?  ");
 			rep3 = sc.nextLine();
 			if (rep3.equalsIgnoreCase("oui"))
 				getScreenNum();		
@@ -51,7 +52,7 @@ public class VueCG {
 		libel = sc.nextLine();
 		if (!ctrl.isValidLibel(libel)){
 			System.out.println("Libellé incohérent, veuillez mettre au moins un caractère alphanumérique");	
-			System.out.println("Voulez-vous entrer un nouveau nom pour le compte?");
+			System.out.print("Voulez-vous entrer un nouveau nom pour le compte?  ");
 			rep = sc.nextLine();
 			if (rep.equalsIgnoreCase("oui"))
 				getScreenLibel();				
@@ -64,7 +65,7 @@ public class VueCG {
 	private void getScreenPosition() {
         String pos = new String(); 
         
-		System.out.println("Indiquez la postion du compte au bilan : A, B, C ou D");
+		System.out.print("Indiquez la postion du compte au bilan : A, B, C ou D   ");
 		pos = sc.nextLine();
 		if(!ctrl.isValidPos(pos)){
 			System.out.println("Position inexistante au bilan");		
@@ -72,6 +73,14 @@ public class VueCG {
 		}
 	}
 	
-
+	private void getScreenRepValide() {
+		System.out.println("Veuillez entrer une réponse valide (oui/non)");
+		if (!ctrl.isValidSub(valid)){
+			valid = sc.nextLine();
+			getScreenRepValide();
+		}
+		
+		
+	}
 
 }
