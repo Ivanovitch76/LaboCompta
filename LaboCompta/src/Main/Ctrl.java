@@ -9,7 +9,7 @@ public class Ctrl {
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean isValid(String rep1, String rep2){
+	public boolean isValidNum(String rep1, String rep2){
 		boolean ok = true;
 
 		switch(rep1){
@@ -35,6 +35,21 @@ public class Ctrl {
 
 		}
 		return ok;
+	}
+
+	public boolean isValidLibel(String libel) {
+		boolean libOK = true;
+		int count = 0;
+		for (int i = 0; i<libel.length(); i++){
+			if (Character.isDigit(libel.charAt(i)))			
+				count++;
+			if (Character.isAlphabetic(libel.charAt(i)))			
+				count++;		
+	
+		}		
+		if (count == 0)
+			libOK = false;
+		return libOK;
 	}
 
 }
