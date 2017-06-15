@@ -13,7 +13,8 @@ public class Vue {
 	public void getScreenDebut(){
 		StringBuilder cgBuild = new StringBuilder() ;
 		Scanner sc = new Scanner(System.in);
-        String str = new String();
+        String rep1 = new String();
+        String rep2 = new String();        
         Object String = null;
 		Ctrl ctrl = new Ctrl(String);
 		
@@ -27,12 +28,12 @@ public class Vue {
  		return cgBuild.toString();
 */		
 		System.out.println("Le numéro de compte doit-il être subdivisable?");
-		str = sc.nextLine();
+		rep1 = sc.nextLine();
 
 		System.out.println("Introduisez un numéro de compte général : ");
-		str = sc.nextLine();
+		rep2 = sc.nextLine();
 //		System.out.println(ctrl.isValid(str));
-		System.out.println(ctrl.isValid(str) ? "Le numéro de compte est valable" : "Mauvais numéro");
+		System.out.println(ctrl.isValid(rep1, rep2) ? "Le numéro de compte est valable" : "Mauvais numéro");
 
 		
 		

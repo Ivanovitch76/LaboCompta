@@ -9,19 +9,21 @@ public class Ctrl {
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean isValid(String str){
+	public boolean isValid(String rep1, String rep2){
 		boolean ok = true;
 		
-		if (!(str.length() < 6 ))
+//		switch(rep1){
+		if (!(rep2.length() < 6 ))
 				ok = false;
 
-		for (int i = 0; i<str.length() && ok; i++){
-			if (!Character.isDigit(str.charAt(i)))			
+		for (int i = 0; i<rep2.length() && ok; i++){
+			if (!Character.isDigit(rep2.charAt(i)))			
 				ok = false;
 			      
 		}
 
 		return ok;
+//		}
 	}
 	
 }
