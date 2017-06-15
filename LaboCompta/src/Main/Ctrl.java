@@ -1,7 +1,6 @@
 package Main;
 
 import java.lang.Object;
-import java.util.ArrayList;
 
 
 public class Ctrl {
@@ -10,32 +9,36 @@ public class Ctrl {
 		// TODO Auto-generated constructor stub
 	}
 
+	public boolean isValidSub(String rep1) {
+		boolean subOK = true;
+		if (!(rep1.equalsIgnoreCase("oui") ||
+			  rep1.equalsIgnoreCase("non")))	
+			subOK = false;
+		return subOK;
+	}
+	
 	public boolean isValidNum(String rep1, String rep2){
-		boolean ok = true;
+		boolean numOK = true;
 
-		switch(rep1){
-		case "oui":
-		case "Oui":
-		case "OUI":	
+		if (rep1.equalsIgnoreCase("oui")){
+
 			if ((!(rep2.length() < 6 )))				
-				ok = false;
-			break;	
+				numOK = false;
+	
+		} else {	
+		if (rep1.equalsIgnoreCase("non")){		
 
-		case "non":
-		case "Non":
-		case "NON":	
 			if (rep2.length() < 6 || rep2.length() > 6)			
-				ok = false;
-			break;   
-		default:
-			ok = false;
-		}	
-		for (int i = 0; i<rep2.length() && ok; i++){
+				numOK = false;
+
+		} 
+		}
+		for (int i = 0; i<rep2.length() && numOK; i++){
 			if (!Character.isDigit(rep2.charAt(i)))			
-				ok = false;
+				numOK = false;
 
 		}
-		return ok;
+		return numOK;
 	}
 
 	public boolean isValidLibel(String libel) {
@@ -64,5 +67,7 @@ public class Ctrl {
 		return posOK;
 		
 	}
+
+
 
 }

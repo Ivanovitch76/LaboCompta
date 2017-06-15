@@ -7,6 +7,7 @@ public class Vue {
 	private User ui;
 	Scanner sc = new Scanner(System.in);
     Object String = null;
+    String rep1 = new String();
 	Ctrl ctrl = new Ctrl(String);
 
 	public Vue() {
@@ -15,21 +16,23 @@ public class Vue {
 	
 	public void getScreenDebut(){
 		StringBuilder cgBuild = new StringBuilder() ;
-        String rep1 = new String();
-        String rep2 = new String(); 
-        String rep3 = new String();  
+
+ 
 		
-/*		cgBuild.append(String.format("Le numéro de compte doit-il être subdivisable?"));
-		cgBuild.append(System.lineSeparator());
-		cgBuild.append(String.format("Introduisez un numéro de compte général : "));
-		cgBuild.append(str = sc.nextLine());
-		cgBuild.append(System.lineSeparator());		
-		cgBuild.append(String.format("Le numéro de compte est valable"));		
-	
- 		return cgBuild.toString();
-*/		
 		System.out.println("Le numéro de compte doit-il être subdivisable?");
 		rep1 = sc.nextLine();
+		if (!ctrl.isValidSub(rep1)){
+			System.out.println("Veuillez entrer une réponse valide (oui/non)");
+			getScreenDebut();
+		} else {
+			getScreenNum();
+		}
+		
+	}
+	
+	private void getScreenNum(){
+        String rep2 = new String(); 
+        String rep3 = new String(); 
 		System.out.println("Introduisez un numéro de compte général : ");
 		rep2 = sc.nextLine();
 		if (!ctrl.isValidNum(rep1, rep2)){
@@ -39,9 +42,7 @@ public class Vue {
 				getScreenDebut();		
 	    } else {
 	    	getScreenLibel();
-	    }
-	
-		
+	    }		
 	}
 
 	private void getScreenLibel() {
