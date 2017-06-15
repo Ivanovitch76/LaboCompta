@@ -1,3 +1,4 @@
 Scenario 7 :
 
 Afficher une page "Menu" au départ de la transaction donnant la possibilité de choisir entre créer un numéro de compte général ou un numéro de compte particulier.
+Le sous-menu adéquant s'affiche en fonction du choix effectué.
