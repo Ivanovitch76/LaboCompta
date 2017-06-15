@@ -1,6 +1,6 @@
 Scenario 5 :
 
-On ajoute une étape d'ajout de position au bilan
+On ajoute une étape d'ajout de position au bilan et on indique une position valide
 	1. voir étapes scénario4
 	2. L'ordinateur affiche un message "Indiquez la postion du compte au bilan : A, B, C ou D"
 	3. L'utilisateur entre la valeur "A"
