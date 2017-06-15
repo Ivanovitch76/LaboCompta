@@ -1,7 +1,12 @@
 package Main;
 
+import compteGeneral.VueCG;
+import compteParticulier.VueCP;
+
 public class DispatchMenu {
-	VueCG vue = new VueCG();
+	VueCG vueCG = new VueCG();
+	VueCP vueCP = new VueCP();
+	
 
 	public String getFirstChoice(String rep) {
 		String subMenu = new String();
@@ -34,13 +39,20 @@ public class DispatchMenu {
 		case "1":
 			switch (rep2){
 			case "1":
-				vue.getScreenDebut();	
+				vueCG.getScreenDebut();	
 				break;
 			default:
-				vue.getScreenDebut();	
+				vueCG.getScreenDebut();	
 			}
 			break;
 		case "2":
+			switch (rep2){
+			case "1":
+				vueCP.getScreenDebut();	
+				break;
+			default:
+				vueCP.getScreenDebut();	
+			}			
 			break;
 		case "3":
 			break;

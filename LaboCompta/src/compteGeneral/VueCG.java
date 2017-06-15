@@ -1,6 +1,8 @@
-package Main;
+package compteGeneral;
 
 import java.util.Scanner;
+
+import Main.User;
 
 public class VueCG {
 	
@@ -8,16 +10,14 @@ public class VueCG {
 	Scanner sc = new Scanner(System.in);
     Object String = null;
     String rep1 = new String();
-	Ctrl ctrl = new Ctrl(String);
+	CtrlCG ctrl = new CtrlCG(String);
 
 	public VueCG() {
 		this.ui = null;
 	}
 	
 	public void getScreenDebut(){
-		StringBuilder cgBuild = new StringBuilder() ;
-	
-		System.out.println("Le numéro de compte doit-il être subdivisable?");
+		System.out.print("Le numéro de compte doit-il être subdivisable?  ");
 		rep1 = sc.nextLine();
 		if (!ctrl.isValidSub(rep1)){
 			System.out.println("Veuillez entrer une réponse valide (oui/non)");

@@ -1,11 +1,8 @@
-package Main;
+package compteParticulier;
 
-import java.lang.Object;
+public class CtrlCP {
 
-
-public class Ctrl {
-
-	public Ctrl(Object string) {
+	public CtrlCP() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -22,13 +19,13 @@ public class Ctrl {
 
 		if (rep1.equalsIgnoreCase("oui")){
 
-			if ((!(rep2.length() < 6 )))				
+			if ((!(rep2.length() < 10 )))				
 				numOK = false;
 	
 		} else {	
 		if (rep1.equalsIgnoreCase("non")){		
 
-			if (rep2.length() < 6 || rep2.length() > 6)			
+			if (rep2.length() < 10 || rep2.length() > 10)			
 				numOK = false;
 
 		} 
@@ -52,19 +49,5 @@ public class Ctrl {
 		return libOK;
 	}
 
-
-	public boolean isValidPos(String pos) {
-		boolean posOK = true;
-		if (!(pos.equalsIgnoreCase("A") ||
-		    pos.equalsIgnoreCase("B") ||
-		    pos.equalsIgnoreCase("C") ||
-		    pos.equalsIgnoreCase("D"))){
-			posOK = false;
-		}
-		return posOK;
-		
-	}
-
-
-
+	
 }
