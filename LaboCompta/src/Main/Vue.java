@@ -46,13 +46,15 @@ public class Vue {
 
 	private void getScreenLibel() {
         String libel = new String(); 
+        String rep = new String(); 
         
 		System.out.println("Introduisez un nom pour le compte : ");
 		libel = sc.nextLine();
 		if (!ctrl.isValidLibel(libel)){
 			System.out.println("Libellé incohérent, veuillez mettre au moins un caractère alphanumérique");	
 			System.out.println("Voulez-vous entrer un nouveau nom pour le compte?");
-			if (libel.equalsIgnoreCase("oui"))
+			rep = sc.nextLine();
+			if (rep.equalsIgnoreCase("oui"))
 				getScreenLibel();				
 		} else {
 			getScreenPosition();
@@ -65,6 +67,10 @@ public class Vue {
         
 		System.out.println("Indiquez la postion du compte au bilan : A, B, C ou D");
 		pos = sc.nextLine();
+		if(!ctrl.isValidPos(pos)){
+			System.out.println("Position inexistante au bilan");		
+			getScreenPosition();
+		}
 	}
 	
 

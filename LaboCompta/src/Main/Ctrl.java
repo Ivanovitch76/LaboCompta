@@ -1,6 +1,7 @@
 package Main;
 
 import java.lang.Object;
+import java.util.ArrayList;
 
 
 public class Ctrl {
@@ -50,6 +51,18 @@ public class Ctrl {
 		if (count == 0)
 			libOK = false;
 		return libOK;
+	}
+
+	public boolean isValidPos(String pos) {
+		boolean posOK = true;
+		if (!(pos.equalsIgnoreCase("A") ||
+		    pos.equalsIgnoreCase("B") ||
+		    pos.equalsIgnoreCase("C") ||
+		    pos.equalsIgnoreCase("D"))){
+			posOK = false;
+		}
+		return posOK;
+		
 	}
 
 }
