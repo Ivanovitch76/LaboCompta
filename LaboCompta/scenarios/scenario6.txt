@@ -1,0 +1,8 @@
+Scenario 5 :
+
+On ajoute une étape d'ajout de position au bilan mais on indique une position non valide
+	1. voir étapes scénario4
+	2. L'ordinateur affiche un message "Indiquez la postion du compte au bilan : A, B, C ou D"
+	3. L'utilisateur entre la valeur "E"
+	4. Le système affiche un message d'erreur "Position inexistante"
+	5. Retour à la question sur la position
