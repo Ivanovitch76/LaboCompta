@@ -1,6 +1,7 @@
 package Main;
 
 public class DispatchMenu {
+	Vue vue = new Vue();
 
 	public String getFirstChoice(String rep) {
 		String subMenu = new String();
@@ -26,6 +27,28 @@ public class DispatchMenu {
 			subMenu = VueMenu.getMenuCG();
 		}
 		return subMenu;
+	}
+
+	public void getSecondChoice(String rep1, String rep2) {
+		switch (rep1){
+		case "1":
+			switch (rep2){
+			case "1":
+				vue.getScreenDebut();	
+				break;
+			default:
+				vue.getScreenDebut();	
+			}
+			break;
+		case "2":
+			break;
+		case "3":
+			break;
+		case "4":
+			break;
+		case "5":
+		}
+		
 	}
 
 }

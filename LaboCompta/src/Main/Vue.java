@@ -37,7 +37,7 @@ public class Vue {
 			System.out.println("Mauvais numéro. Voulez-vous en entrer un nouveau?");
 			rep3 = sc.nextLine();
 			if (rep3.equalsIgnoreCase("oui"))
-				getScreenDebut();		
+				getScreenNum();		
 	    } else {
 	    	getScreenLibel();
 	    }		

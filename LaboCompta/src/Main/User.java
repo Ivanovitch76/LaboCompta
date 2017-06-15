@@ -43,7 +43,9 @@ public class User {
 		System.out.print(dM.getFirstChoice(rep1));
 		rep2 = scan.nextLine();		
 		CtrlMenu.isValidSM(rep1, rep2);
-		if (!CtrlMenu.isValid(rep2)){
+		if (CtrlMenu.isValid(rep2)){
+			dM.getSecondChoice(rep1, rep2);
+		} else {	
 			System.out.println("Votre choix ne fait pas partie de la liste. Veuillez choisir un autre numéro");	
 			subMenuProc();
 		}
