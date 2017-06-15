@@ -1,0 +1,3 @@
+Scenario 8 :
+
+A partir de ce nouveau menu, suivre toute la procédure pour créer un nouveau compte général et ses attributs

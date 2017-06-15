@@ -15,4 +15,27 @@ public class CtrlMenu {
 		
 	}
 
+	public static boolean isValidSM(String rep1, String rep2) {
+		boolean smOK = true;
+		switch(rep1){
+			case "1":
+			case "2":
+				if (!(rep2.equals("1") ||
+					  rep2.equals("2") ||	
+				      rep2.equals("3") ||
+					  rep2.equals("4"))){ 
+						smOK = false;		
+					}			
+				break;
+			case "3":	
+				if (!(rep2.equals("1") ||
+					  rep2.equals("2") ||	
+					  rep2.equals("3"))){ 	
+						smOK = false;		
+						}				
+		}
+		return smOK;
+		
+	}
+
 }

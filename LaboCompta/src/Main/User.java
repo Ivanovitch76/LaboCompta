@@ -8,8 +8,8 @@ public class User {
 	Vue vue = new Vue();
 	VueMenu vueM = new VueMenu();
 	Scanner scan = new Scanner(System.in);
-	String rep1 = new String();
 	DispatchMenu dM = new DispatchMenu();
+	String rep1 = new String();
 	
 	
 	public void setId(String id) {
@@ -21,15 +21,13 @@ public class User {
 		return id;
 	}
 
-	public void startproc() {
+	public void startproc() {		
 		vueM.getMenu();
 		System.out.print(vueM.getMenu());
 		rep1 = scan.nextLine();	
 		CtrlMenu.isValid(rep1);
 		if (CtrlMenu.isValid(rep1)){
-			dM.getFirstChoice(rep1);
-			System.out.print(dM.getFirstChoice(rep1));
-			rep1 = scan.nextLine();				
+			subMenuProc();
 		} else {
 			System.out.println("Votre choix ne fait pas partie de la liste. Veuillez choisir un numéro entre 1 et 5");
 			startproc();
@@ -38,6 +36,18 @@ public class User {
 		
 	}
 
+	private void subMenuProc() {
+		String rep2 = new String();
+		
+		dM.getFirstChoice(rep1);
+		System.out.print(dM.getFirstChoice(rep1));
+		rep2 = scan.nextLine();		
+		CtrlMenu.isValidSM(rep1, rep2);
+		if (!CtrlMenu.isValid(rep2)){
+			System.out.println("Votre choix ne fait pas partie de la liste. Veuillez choisir un autre numéro");	
+			subMenuProc();
+		}
+	}
 
 	
 }
