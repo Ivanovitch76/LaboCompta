@@ -11,19 +11,30 @@ public class Ctrl {
 
 	public boolean isValid(String rep1, String rep2){
 		boolean ok = true;
-		
-//		switch(rep1){
-		if (!(rep2.length() < 6 ))
-				ok = false;
 
+		switch(rep1){
+		case "oui":
+		case "Oui":
+		case "OUI":	
+			if ((!(rep2.length() < 6 )))				
+				ok = false;
+			break;	
+
+		case "non":
+		case "Non":
+		case "NON":	
+			if (rep2.length() < 6 || rep2.length() > 6)			
+				ok = false;
+			break;   
+		default:
+			ok = false;
+		}	
 		for (int i = 0; i<rep2.length() && ok; i++){
 			if (!Character.isDigit(rep2.charAt(i)))			
 				ok = false;
-			      
-		}
 
+		}
 		return ok;
-//		}
 	}
-	
+
 }
