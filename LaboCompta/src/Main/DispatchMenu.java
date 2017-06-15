@@ -1,7 +1,7 @@
 package Main;
 
 public class DispatchMenu {
-	Vue vue = new Vue();
+	VueCG vue = new VueCG();
 
 	public String getFirstChoice(String rep) {
 		String subMenu = new String();

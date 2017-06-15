@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class User {
 
 	private String id;
-	Vue vue = new Vue();
 	VueMenu vueM = new VueMenu();
 	Scanner scan = new Scanner(System.in);
 	DispatchMenu dM = new DispatchMenu();

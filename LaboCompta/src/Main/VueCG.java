@@ -2,7 +2,7 @@ package Main;
 
 import java.util.Scanner;
 
-public class Vue {
+public class VueCG {
 	
 	private User ui;
 	Scanner sc = new Scanner(System.in);
@@ -10,7 +10,7 @@ public class Vue {
     String rep1 = new String();
 	Ctrl ctrl = new Ctrl(String);
 
-	public Vue() {
+	public VueCG() {
 		this.ui = null;
 	}
 	
