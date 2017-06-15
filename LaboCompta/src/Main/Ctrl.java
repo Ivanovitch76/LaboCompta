@@ -43,18 +43,15 @@ public class Ctrl {
 
 	public boolean isValidLibel(String libel) {
 		boolean libOK = true;
+//        String temp = "";
 		int count = 0;
-		for (int i = 0; i<libel.length(); i++){
-			if (Character.isDigit(libel.charAt(i)))			
-				count++;
-			if (Character.isAlphabetic(libel.charAt(i)))			
-				count++;		
-	
-		}		
-		if (count == 0)
+		if (libel.trim().equals("")){
 			libOK = false;
+		}
+
 		return libOK;
 	}
+
 
 	public boolean isValidPos(String pos) {
 		boolean posOK = true;

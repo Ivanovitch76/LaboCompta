@@ -16,9 +16,7 @@ public class Vue {
 	
 	public void getScreenDebut(){
 		StringBuilder cgBuild = new StringBuilder() ;
-
- 
-		
+	
 		System.out.println("Le numéro de compte doit-il être subdivisable?");
 		rep1 = sc.nextLine();
 		if (!ctrl.isValidSub(rep1)){
