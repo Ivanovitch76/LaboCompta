@@ -1,4 +1,4 @@
-Scenario 5 :
+Scenario 6 :
 
 On ajoute une étape d'ajout de position au bilan mais on indique une position non valide
 	1. voir étapes scénario4
