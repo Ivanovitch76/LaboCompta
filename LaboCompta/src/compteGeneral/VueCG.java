@@ -24,7 +24,7 @@ public class VueCG {
     static String pos = new String(); 
 	CtrlCG ctrl = new CtrlCG(StringV);
 	String valid = new String();
-	private HashMap<String, Numero> listCG; 
+	private ListeCompteG listeCompteG; 
 	static StringBuilder recapBuild = new StringBuilder();
 
 	public VueCG() {
@@ -104,9 +104,7 @@ public class VueCG {
 		
 	}
 
-	public static String getRecapitulatif() {
-		VueCG data = new VueCG();
-		data.listCG = new HashMap<>();
+	public  String getRecapitulatif() {
 
 		recapBuild.append(System.lineSeparator());	
 		recapBuild.append(System.lineSeparator());	
@@ -128,6 +126,11 @@ public class VueCG {
 		
 		return recapBuild.toString();
 //		data.listCG.put("1", new Numero(rep2));
+		
+	}
+
+	public void setListCompte(ListeCompteG listeCompteG) {
+		this.listeCompteG = listeCompteG;
 		
 	}
 	

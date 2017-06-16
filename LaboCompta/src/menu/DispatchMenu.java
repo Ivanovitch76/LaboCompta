@@ -1,5 +1,6 @@
 package menu;
 
+import compteGeneral.ListeCompteG;
 import compteGeneral.VueCG;
 import compteParticulier.VueCP;
 
@@ -7,6 +8,11 @@ public class DispatchMenu {
 	VueCG vueCG = new VueCG();
 	VueCP vueCP = new VueCP();
 	
+	public DispatchMenu(){
+		ListeCompteG listeCompteG = new ListeCompteG();
+		listeCompteG.load();
+		vueCG.setListCompte(listeCompteG);
+	}
 
 	public String getFirstChoice(String rep) {
 		String subMenu = new String();

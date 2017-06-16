@@ -1,5 +1,7 @@
 package menu;
 
+import compteGeneral.ListeCompteG;
+
 public class VueMenu {
 
 	public static String getMenu() {
@@ -98,5 +100,6 @@ public class VueMenu {
 		return menuECBuild.toString();
 		
 	}
+
 	
 }
