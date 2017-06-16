@@ -2,7 +2,7 @@ package compteParticulier;
 
 import java.util.Scanner;
 
-import compteGeneral.ListeCompteG;
+import compteGeneral.ListeCompteGen;
 
 public class VueCP {
 
@@ -12,7 +12,7 @@ public class VueCP {
     static String libel = new String();    
 	CtrlCP ctrl = new CtrlCP();
 	String valid = new String(); 
-	private ListeCompteG listeCompteG; 
+	private ListeCompteGen listeCompteG; 
 	static StringBuilder recapBuild = new StringBuilder();
 
 	public VueCP() {
@@ -23,7 +23,7 @@ public class VueCP {
 		getScreenNum();
 		getScreenLibel();
 		getRecapitulatif();
-		System.out.println(recapBuild);
+		System.out.print(recapBuild);
 	}
 	
 	public void getScreenDebut(){
@@ -94,7 +94,7 @@ public class VueCP {
 		recapBuild.append(System.lineSeparator());
 		recapBuild.append(String.format("Nom du compte: " + libel));
 		recapBuild.append(System.lineSeparator());
-		recapBuild.append(String.format("Validez-vous vos choix?"));
+		recapBuild.append(String.format("Validez-vous vos choix?   "));
 		
 		return recapBuild.toString();
 

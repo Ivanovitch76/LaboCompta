@@ -1,6 +1,6 @@
 package menu;
 
-import compteGeneral.ListeCompteG;
+import compteGeneral.ListeCompteGen;
 
 public class VueMenu {
 

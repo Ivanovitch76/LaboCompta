@@ -8,10 +8,19 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
-public class ListeCompteG {
+public class ListeCompteGen {
 	Object listComptes = new HashMap();
 
-	public boolean addCompte(String num, String libel,char pos,boolean sub){
+	public static boolean addCompte(String num, String libel,char pos,boolean sub){
+		String numero = num;
+		String libelle = libel;
+		char posi = pos;
+		boolean subd = sub;
+		System.out.println("numéro: " + numero);
+		System.out.println("libellé: " + libelle);
+		System.out.println("position: " + posi);
+		System.out.println("sub: " + subd);
+		
 		return false;
 	}
 	public void load() {

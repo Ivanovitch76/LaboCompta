@@ -3,7 +3,7 @@ package menu;
 import java.util.Scanner;
 
 import compteGeneral.CtrlCG;
-import compteGeneral.ListeCompteG;
+import compteGeneral.ListeCompteGen;
 import compteGeneral.VueCG;
 import compteParticulier.VueCP;
 
@@ -14,6 +14,9 @@ public class DispatchMenu {
 	Scanner scan = new Scanner(System.in);
 	String rep1 = new String();
 	String valid = new String();
+	char pos;
+	boolean sub = false;
+	
 	
 	
 	public DispatchMenu(){
@@ -24,9 +27,10 @@ public class DispatchMenu {
 		menuProc();
 		subMenuProc();
 		validChoix();
-		if (valid == "oui"){
-			
-		}
+		if (valid.equals("oui")){
+			System.out.println("faut venir ici");
+			ListeCompteGen.addCompte("1234", "Youpie", 'A', true);		
+		} 	
 	}
 	
 	public void menuProc() {		
@@ -34,9 +38,7 @@ public class DispatchMenu {
 		System.out.print(vueM.getMenu());
 		rep1 = scan.nextLine();	
 		CtrlMenu.isValid(rep1);
-		if (CtrlMenu.isValid(rep1)){
-			subMenuProc();
-		} else {
+		if (!(CtrlMenu.isValid(rep1))){
 			System.out.println("Votre choix ne fait pas partie de la liste. Veuillez choisir un numéro entre 1 et 5");
 			startproc();
 		}
@@ -53,7 +55,6 @@ public class DispatchMenu {
 		CtrlMenu.isValidSM(rep1, rep2);
 		if (CtrlMenu.isValid(rep2)){
 			getSecondChoice(rep1, rep2);
-			validChoix();
 		} else {	
 			System.out.println("Votre choix ne fait pas partie de la liste. Veuillez choisir un autre numéro");	
 			subMenuProc();
@@ -67,6 +68,7 @@ public class DispatchMenu {
 			System.out.print("Veuillez entrer une réponse valide (oui/non)   ");
 			valid = scan.nextLine();
 		}
+
 	}
 	
 	public String getFirstChoice(String rep) {

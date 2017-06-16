@@ -22,7 +22,7 @@ public class VueCG {
     static String pos = new String(); 
 	CtrlCG ctrl = new CtrlCG(StringV);
 	String valid = new String();
-	private ListeCompteG listeCompteG; 
+	private ListeCompteGen listeCompteGen; 
 	static StringBuilder recapBuild = new StringBuilder();
 
 	public VueCG() {
@@ -34,7 +34,7 @@ public class VueCG {
 		getScreenLibel();
 		getScreenPosition();
 		getRecapitulatif();
-		System.out.println(recapBuild);
+		System.out.print(recapBuild);
 	}
 	
 	public void getScreenDebut(){
@@ -118,15 +118,15 @@ public class VueCG {
 		recapBuild.append(System.lineSeparator());
 		recapBuild.append(String.format("Position au bilan: " + pos));
 		recapBuild.append(System.lineSeparator());
-		recapBuild.append(String.format("Validez-vous vos choix?"));
+		recapBuild.append(String.format("Validez-vous vos choix?   "));
 		
 		return recapBuild.toString();
 
 		
 	}
 
-	public void setListCompte(ListeCompteG listeCompteG) {
-		this.listeCompteG = listeCompteG;
+	public void setListCompte(ListeCompteGen listeCompteGen) {
+		this.listeCompteGen = listeCompteGen;
 		
 	}
 
