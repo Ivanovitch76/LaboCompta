@@ -1,4 +1,4 @@
-package Main;
+package menu;
 
 public class CtrlMenu {
 

@@ -2,6 +2,10 @@ package Main;
 
 import java.util.Scanner;
 
+import menu.CtrlMenu;
+import menu.DispatchMenu;
+import menu.VueMenu;
+
 public class User {
 
 	private String id;
@@ -44,10 +48,18 @@ public class User {
 		CtrlMenu.isValidSM(rep1, rep2);
 		if (CtrlMenu.isValid(rep2)){
 			dM.getSecondChoice(rep1, rep2);
+			validChoix();
 		} else {	
 			System.out.println("Votre choix ne fait pas partie de la liste. Veuillez choisir un autre numéro");	
 			subMenuProc();
 		}
+	}
+
+	private void validChoix() {
+		String valid = new String();	
+
+		valid = scan.nextLine();
+		
 	}
 
 	

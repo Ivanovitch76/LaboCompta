@@ -1,4 +1,4 @@
-package Main;
+package menu;
 
 import compteGeneral.VueCG;
 import compteParticulier.VueCP;

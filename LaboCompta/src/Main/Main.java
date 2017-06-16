@@ -6,6 +6,7 @@ public class Main {
 		User ui = new User();
 //		Vue vue = new Vue();
 
+		
 		ui.startproc();
 //		vue.getScreenDebut();
 //		System.out.println(vue.getScreenDebut());

@@ -8,10 +8,14 @@ public class VueCG {
 	
 	private User ui;
 	Scanner sc = new Scanner(System.in);
-    Object String = null;
-    String rep1 = new String();
-	CtrlCG ctrl = new CtrlCG(String);
+    Object StringV = null;
+    static String rep1 = new String();
+    static String rep2 = new String(); 
+    static String libel = new String(); 
+    static String pos = new String(); 
+	CtrlCG ctrl = new CtrlCG(StringV);
 	String valid = new String(); 
+	static StringBuilder recapBuild = new StringBuilder();
 
 	public VueCG() {
 		this.ui = null;
@@ -30,7 +34,7 @@ public class VueCG {
 	}
 	
 	private void getScreenNum(){
-        String rep2 = new String(); 
+
         String rep3 = new String(); 
 		System.out.print("Introduisez un numéro de compte général : ");
 		rep2 = sc.nextLine();
@@ -39,8 +43,6 @@ public class VueCG {
 			rep3 = sc.nextLine();
 			valid = rep3;
 			getScreenRepValide();
-//			getScreenLibel();	
-			System.out.println("rep3: " + rep3 + "    " + valid);
 			if (valid.equalsIgnoreCase("oui"))
 				getScreenNum();		
 	    } else {
@@ -49,13 +51,13 @@ public class VueCG {
 	}
 
 	private void getScreenLibel() {
-        String libel = new String(); 
+
         String rep = new String(); 
         
-		System.out.println("Introduisez un nom pour le compte : ");
+		System.out.print("Introduisez un nom pour le compte : ");
 		libel = sc.nextLine();
 		if (!ctrl.isValidLibel(libel)){
-			System.out.println("Libellé incohérent, veuillez mettre au moins un caractère alphanumérique");	
+			System.out.print("Libellé incohérent, veuillez mettre au moins un caractère alphanumérique");	
 			System.out.print("Voulez-vous entrer un nouveau nom pour le compte?  ");
 			rep = sc.nextLine();
 			valid = rep;
@@ -70,13 +72,15 @@ public class VueCG {
 	}
 
 	private void getScreenPosition() {
-        String pos = new String(); 
         
 		System.out.print("Indiquez la postion du compte au bilan : A, B, C ou D   ");
 		pos = sc.nextLine();
 		if(!ctrl.isValidPos(pos)){
 			System.out.println("Position inexistante au bilan");		
 			getScreenPosition();
+		} else {
+			getRecapitulatif();
+			System.out.println(recapBuild);
 		}
 	}
 	
@@ -90,6 +94,28 @@ public class VueCG {
 		
 	}
 
+	public static String getRecapitulatif() {
+
+		recapBuild.append(System.lineSeparator());	
+		recapBuild.append(System.lineSeparator());	
+		recapBuild.append(String.format("-----------------------------------------------"));
+		recapBuild.append(System.lineSeparator());	
+		recapBuild.append(String.format("Récapitulatif de vos choix:"));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("---------------------------"));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("Numéro de compte général: " + rep2));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("Subdivisable: " + rep1));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("Nom du compte: " + libel));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("Position au bilan: " + pos));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("Validez-vous vos choix?"));
+		
+		return recapBuild.toString();
+	}
 	
 	
 }

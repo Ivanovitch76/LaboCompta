@@ -1,0 +1,4 @@
+Scenario 10 :
+
+On suit toute la procédure de création d'un compte général et celui-ci est sauvé dans un fichier "Comptes.txt"
+
