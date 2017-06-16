@@ -1,10 +1,14 @@
-package Main;
+package main;
 
 import java.util.Scanner;
 
+import compteGeneral.CtrlCG;
+import compteGeneral.VueCG;
 import menu.CtrlMenu;
 import menu.DispatchMenu;
 import menu.VueMenu;
+import java.util.HashMap;
+import java.util.Map;
 
 public class User {
 
@@ -59,8 +63,20 @@ public class User {
 		String valid = new String();	
 
 		valid = scan.nextLine();
+		while (!CtrlCG.isValidSub(valid)){
+			System.out.print("Veuillez entrer une réponse valide (oui/non)   ");
+			valid = scan.nextLine();
+		saveChoix();	
+		}
+
 		
 	}
 
+	private void saveChoix() {
+		Map<Numero, Data> ListComptes = new HashMap<>();
+		Numero numero = new Numero(VueCG.getRecapitulatif());
+		
+	}
+	
 	
 }

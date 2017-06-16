@@ -1,8 +1,17 @@
 package compteGeneral;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
-import Main.User;
+import main.Numero;
+import main.User;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class VueCG {
 	
@@ -14,7 +23,8 @@ public class VueCG {
     static String libel = new String(); 
     static String pos = new String(); 
 	CtrlCG ctrl = new CtrlCG(StringV);
-	String valid = new String(); 
+	String valid = new String();
+	private HashMap<String, Numero> listCG; 
 	static StringBuilder recapBuild = new StringBuilder();
 
 	public VueCG() {
@@ -95,6 +105,8 @@ public class VueCG {
 	}
 
 	public static String getRecapitulatif() {
+		VueCG data = new VueCG();
+		data.listCG = new HashMap<>();
 
 		recapBuild.append(System.lineSeparator());	
 		recapBuild.append(System.lineSeparator());	
@@ -115,6 +127,8 @@ public class VueCG {
 		recapBuild.append(String.format("Validez-vous vos choix?"));
 		
 		return recapBuild.toString();
+//		data.listCG.put("1", new Numero(rep2));
+		
 	}
 	
 	

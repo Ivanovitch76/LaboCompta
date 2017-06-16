@@ -2,14 +2,13 @@ package compteGeneral;
 
 import java.lang.Object;
 
-
 public class CtrlCG {
 
 	public CtrlCG(Object string) {
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean isValidSub(String rep1) {
+	public static boolean isValidSub(String rep1) {
 		boolean subOK = true;
 		if (!(rep1.equalsIgnoreCase("oui") ||
 			  rep1.equalsIgnoreCase("non")))	
@@ -55,10 +54,11 @@ public class CtrlCG {
 
 	public boolean isValidPos(String pos) {
 		boolean posOK = true;
-		if (!(pos.equalsIgnoreCase("A") ||
+		if (!(pos.equalsIgnoreCase("A")) ||
 		    pos.equalsIgnoreCase("B") ||
 		    pos.equalsIgnoreCase("C") ||
-		    pos.equalsIgnoreCase("D"))){
+		    pos.equalsIgnoreCase("D")){
+		
 			posOK = false;
 		}
 		return posOK;
