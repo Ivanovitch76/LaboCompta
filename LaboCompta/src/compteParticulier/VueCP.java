@@ -36,11 +36,11 @@ public class VueCP {
 			rep3 = sc.nextLine();
 			valid = rep3;	
 			getScreenRepValide();
-			getScreenNum();
-			} else {	
-				if (rep3.equalsIgnoreCase("oui"))
-					getScreenNum();
-			}	
+			if (valid.equalsIgnoreCase("oui"))
+				getScreenNum();
+	    } else {
+	    	getScreenLibel();
+	    }	
 
 	    }		
 
@@ -57,14 +57,10 @@ public class VueCP {
 			System.out.print("Voulez-vous entrer un nouveau nom pour le compte?  ");
 			rep = sc.nextLine();
 			valid = rep;
-			getScreenRepValide();
-			getScreenLibel();
-			} else {			
-			if (rep.equalsIgnoreCase("oui"))
+			getScreenRepValide();			
+			if (valid.equalsIgnoreCase("oui"))
 				getScreenLibel();	
 		}
-		 
-		
 	}
 	
 	private void getScreenRepValide() {

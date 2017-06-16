@@ -37,7 +37,11 @@ public class VueCG {
 		if (!ctrl.isValidNum(rep1, rep2)){
 			System.out.print("Mauvais numéro. Voulez-vous en entrer un nouveau?  ");
 			rep3 = sc.nextLine();
-			if (rep3.equalsIgnoreCase("oui"))
+			valid = rep3;
+			getScreenRepValide();
+//			getScreenLibel();	
+			System.out.println("rep3: " + rep3 + "    " + valid);
+			if (valid.equalsIgnoreCase("oui"))
 				getScreenNum();		
 	    } else {
 	    	getScreenLibel();
@@ -54,7 +58,10 @@ public class VueCG {
 			System.out.println("Libellé incohérent, veuillez mettre au moins un caractère alphanumérique");	
 			System.out.print("Voulez-vous entrer un nouveau nom pour le compte?  ");
 			rep = sc.nextLine();
-			if (rep.equalsIgnoreCase("oui"))
+			valid = rep;
+			getScreenRepValide();
+//			getScreenLibel();			
+			if (valid.equalsIgnoreCase("oui"))
 				getScreenLibel();				
 		} else {
 			getScreenPosition();
@@ -74,13 +81,15 @@ public class VueCG {
 	}
 	
 	private void getScreenRepValide() {
-		System.out.println("Veuillez entrer une réponse valide (oui/non)");
 		if (!ctrl.isValidSub(valid)){
+			System.out.print("Veuillez entrer une réponse valide (oui/non)   ");
 			valid = sc.nextLine();
-			getScreenRepValide();
-		}
+			getScreenRepValide();			
+		} 
 		
 		
 	}
 
+	
+	
 }
