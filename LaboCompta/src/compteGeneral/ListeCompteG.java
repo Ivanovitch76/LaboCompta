@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
 public class ListeCompteG {
-	Object listComptes = new Object();
+	Object listComptes = new HashMap();
 
 	public boolean addCompte(String num, String libel,char pos,boolean sub){
 		return false;
