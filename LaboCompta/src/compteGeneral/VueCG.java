@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import main.Numero;
-import main.User;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,7 +14,6 @@ import java.io.ObjectOutputStream;
 
 public class VueCG {
 	
-	private User ui;
 	Scanner sc = new Scanner(System.in);
     Object StringV = null;
     static String rep1 = new String();
@@ -28,7 +26,15 @@ public class VueCG {
 	static StringBuilder recapBuild = new StringBuilder();
 
 	public VueCG() {
-		this.ui = null;
+	}
+	
+	public void getScreenOperation() {
+		getScreenDebut();
+		getScreenNum();
+		getScreenLibel();
+		getScreenPosition();
+		getRecapitulatif();
+		System.out.println(recapBuild);
 	}
 	
 	public void getScreenDebut(){
@@ -37,10 +43,7 @@ public class VueCG {
 		if (!ctrl.isValidSub(rep1)){
 			System.out.println("Veuillez entrer une réponse valide (oui/non)");
 			getScreenDebut();
-		} else {
-			getScreenNum();
-		}
-		
+		} 
 	}
 	
 	private void getScreenNum(){
@@ -55,9 +58,7 @@ public class VueCG {
 			getScreenRepValide();
 			if (valid.equalsIgnoreCase("oui"))
 				getScreenNum();		
-	    } else {
-	    	getScreenLibel();
-	    }		
+	    } 	
 	}
 
 	private void getScreenLibel() {
@@ -67,7 +68,7 @@ public class VueCG {
 		System.out.print("Introduisez un nom pour le compte : ");
 		libel = sc.nextLine();
 		if (!ctrl.isValidLibel(libel)){
-			System.out.print("Libellé incohérent, veuillez mettre au moins un caractère alphanumérique");	
+			System.out.println("Libellé incohérent, veuillez mettre au moins un caractère alphanumérique");	
 			System.out.print("Voulez-vous entrer un nouveau nom pour le compte?  ");
 			rep = sc.nextLine();
 			valid = rep;
@@ -75,9 +76,7 @@ public class VueCG {
 //			getScreenLibel();			
 			if (valid.equalsIgnoreCase("oui"))
 				getScreenLibel();				
-		} else {
-			getScreenPosition();
-		}
+		} 
 		
 	}
 
@@ -88,10 +87,7 @@ public class VueCG {
 		if(!ctrl.isValidPos(pos)){
 			System.out.println("Position inexistante au bilan");		
 			getScreenPosition();
-		} else {
-			getRecapitulatif();
-			System.out.println(recapBuild);
-		}
+		} 
 	}
 	
 	private void getScreenRepValide() {
@@ -125,7 +121,7 @@ public class VueCG {
 		recapBuild.append(String.format("Validez-vous vos choix?"));
 		
 		return recapBuild.toString();
-//		data.listCG.put("1", new Numero(rep2));
+
 		
 	}
 
@@ -133,6 +129,8 @@ public class VueCG {
 		this.listeCompteG = listeCompteG;
 		
 	}
+
+
 	
 	
 }

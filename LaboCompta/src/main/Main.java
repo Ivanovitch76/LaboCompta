@@ -1,15 +1,15 @@
 package main;
 
+import menu.DispatchMenu;
+
 public class Main {
 
 	public static void main(String[] args) {
-		User ui = new User();
-		ActionsDB db = new ActionsDB();
+		DispatchMenu dM = new DispatchMenu();
 //		Vue vue = new Vue();
 
 		
-		db.load();
-		ui.startproc();
+		dM.startproc();
 //		vue.getScreenDebut();
 //		System.out.println(vue.getScreenDebut());
 

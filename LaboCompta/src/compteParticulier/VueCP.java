@@ -2,15 +2,28 @@ package compteParticulier;
 
 import java.util.Scanner;
 
+import compteGeneral.ListeCompteG;
+
 public class VueCP {
 
 	Scanner sc = new Scanner(System.in);
-    Object String = null;
-    String rep1 = new String();
+    static String rep1 = new String();
+    static String rep2 = new String(); 
+    static String libel = new String();    
 	CtrlCP ctrl = new CtrlCP();
 	String valid = new String(); 
+	private ListeCompteG listeCompteG; 
+	static StringBuilder recapBuild = new StringBuilder();
 
 	public VueCP() {
+	}
+	
+	public void getScreenOperation() {
+		getScreenDebut();
+		getScreenNum();
+		getScreenLibel();
+		getRecapitulatif();
+		System.out.println(recapBuild);
 	}
 	
 	public void getScreenDebut(){
@@ -20,14 +33,10 @@ public class VueCP {
 		if (!ctrl.isValidSub(rep1)){
 			System.out.println("Veuillez entrer une réponse valide (oui/non)");
 			getScreenDebut();
-		} else {
-			getScreenNum();
-		}
-		
+		} 		
 	}
 	
 	private void getScreenNum(){
-        String rep2 = new String(); 
         String rep3 = new String(); 
 		System.out.print("Introduisez un numéro de compte général : ");
 		rep2 = sc.nextLine();
@@ -38,16 +47,12 @@ public class VueCP {
 			getScreenRepValide();
 			if (valid.equalsIgnoreCase("oui"))
 				getScreenNum();
-	    } else {
-	    	getScreenLibel();
-	    }	
-
-	    }		
+	    } 
+	}		
 
 
 
 	private void getScreenLibel() {
-        String libel = new String(); 
         String rep = new String(); 
         
 		System.out.print("Introduisez un nom pour le compte : ");
@@ -73,5 +78,26 @@ public class VueCP {
 		
 	}
 
-	
+		public  String getRecapitulatif() {
+
+		recapBuild.append(System.lineSeparator());	
+		recapBuild.append(System.lineSeparator());	
+		recapBuild.append(String.format("-----------------------------------------------"));
+		recapBuild.append(System.lineSeparator());	
+		recapBuild.append(String.format("Récapitulatif de vos choix:"));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("---------------------------"));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("Numéro de compte général: " + rep2));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("Subdivisable: " + rep1));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("Nom du compte: " + libel));
+		recapBuild.append(System.lineSeparator());
+		recapBuild.append(String.format("Validez-vous vos choix?"));
+		
+		return recapBuild.toString();
+
+		
+	}
 }

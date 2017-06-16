@@ -1,5 +1,8 @@
 package menu;
 
+import java.util.Scanner;
+
+import compteGeneral.CtrlCG;
 import compteGeneral.ListeCompteG;
 import compteGeneral.VueCG;
 import compteParticulier.VueCP;
@@ -7,13 +10,65 @@ import compteParticulier.VueCP;
 public class DispatchMenu {
 	VueCG vueCG = new VueCG();
 	VueCP vueCP = new VueCP();
+	VueMenu vueM = new VueMenu();
+	Scanner scan = new Scanner(System.in);
+	String rep1 = new String();
+	String valid = new String();
+	
 	
 	public DispatchMenu(){
-		ListeCompteG listeCompteG = new ListeCompteG();
-		listeCompteG.load();
-		vueCG.setListCompte(listeCompteG);
+
 	}
 
+	public void startproc(){
+		menuProc();
+		subMenuProc();
+		validChoix();
+		if (valid == "oui"){
+			
+		}
+	}
+	
+	public void menuProc() {		
+		vueM.getMenu();
+		System.out.print(vueM.getMenu());
+		rep1 = scan.nextLine();	
+		CtrlMenu.isValid(rep1);
+		if (CtrlMenu.isValid(rep1)){
+			subMenuProc();
+		} else {
+			System.out.println("Votre choix ne fait pas partie de la liste. Veuillez choisir un numéro entre 1 et 5");
+			startproc();
+		}
+
+		
+	}
+
+	public void subMenuProc() {
+		String rep2 = new String();
+		
+		getFirstChoice(rep1);
+		System.out.print(getFirstChoice(rep1));
+		rep2 = scan.nextLine();		
+		CtrlMenu.isValidSM(rep1, rep2);
+		if (CtrlMenu.isValid(rep2)){
+			getSecondChoice(rep1, rep2);
+			validChoix();
+		} else {	
+			System.out.println("Votre choix ne fait pas partie de la liste. Veuillez choisir un autre numéro");	
+			subMenuProc();
+		}
+	}
+
+	public void validChoix() {	
+
+		valid = scan.nextLine();
+		while (!CtrlCG.isValidSub(valid)){
+			System.out.print("Veuillez entrer une réponse valide (oui/non)   ");
+			valid = scan.nextLine();
+		}
+	}
+	
 	public String getFirstChoice(String rep) {
 		String subMenu = new String();
 		switch (rep){
@@ -45,19 +100,19 @@ public class DispatchMenu {
 		case "1":
 			switch (rep2){
 			case "1":
-				vueCG.getScreenDebut();	
+				vueCG.getScreenOperation();	
 				break;
 			default:
-				vueCG.getScreenDebut();	
+				vueCG.getScreenOperation();	
 			}
 			break;
 		case "2":
 			switch (rep2){
 			case "1":
-				vueCP.getScreenDebut();	
+				vueCP.getScreenOperation();	
 				break;
 			default:
-				vueCP.getScreenDebut();	
+				vueCP.getScreenOperation();	
 			}			
 			break;
 		case "3":
