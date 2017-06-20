@@ -128,10 +128,6 @@ public class VueCG {
 		
 	}
 
-	public void setListCompte(ListeCompteGen listeCompteGen) {
-		this.listeCompteGen = listeCompteGen;
-		
-	}
 
 	public void getAnswers() {
 		boolean sub = false;
@@ -139,6 +135,11 @@ public class VueCG {
 			sub = true;
 		}
 		this.listeCompteGen.addCompte(rep2, libel, pos, sub);
+		
+	}
+
+	public void setListCompte(ListeCompteGen lcg) {
+		// TODO Auto-generated method stub
 		
 	}
 

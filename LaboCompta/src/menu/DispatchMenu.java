@@ -18,7 +18,6 @@ public class DispatchMenu {
 	boolean sub = false;
 	
 	
-	
 	public DispatchMenu(){
 		ListeCompteGen lcg = new ListeCompteGen();
 		lcg.load();

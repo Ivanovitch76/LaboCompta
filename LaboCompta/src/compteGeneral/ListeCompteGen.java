@@ -9,18 +9,24 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
 public class ListeCompteGen {
-	 private HashMap<String, CompteGeneral> listComptes = new HashMap<>();
+	private HashMap<String, CompteGeneral> listComptes = new HashMap<>();
+	private ListeCompteGen listeCompteGen;
 
 	public  boolean addCompte(String num, String libel,String pos,boolean sub){
-		//ListeCompteGen lCG = new ListeCompteGen();
-		//this.listComptes = new HashMap<String, CompteGeneral>();
+		isValidNum(num);
 		CompteGeneral cg;
-		// TODO test
-		cg = new CompteGeneralSubdivisable(num, libel,pos);
-		
+		if (sub){
+			cg = new CompteGeneralSubdivisable(num, libel,pos);			
+		} else {
+			cg = new CompteGeneralNonSubdivisable(num, libel,pos);	
+		}
 		this.listComptes.put(num, cg);
 		this.save();
 		return false;
+	}
+	private void isValidNum(String num) {
+		// TODO Auto-generated method stub
+		
 	}
 	public void load() {
 		try {
@@ -50,5 +56,10 @@ public class ListeCompteGen {
 		} catch (java.io.IOException e) {
 			e.printStackTrace();
 		}		
+	}
+	
+	public void setListCompte(ListeCompteGen listeCompteGen) {
+		this.listeCompteGen = listeCompteGen;
+		
 	}
 }
