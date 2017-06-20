@@ -9,20 +9,24 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
 public class ListeCompteGen {
-	Object listComptes = new HashMap<>();
+	 private HashMap<String, CompteGeneral> listComptes = new HashMap<>();
 
-	public static boolean addCompte(String num, String libel,String pos,boolean sub){
-		ListeCompteGen lCG = new ListeCompteGen();
-		lCG.listComptes = new HashMap<String, String>();
-		lCG.listComptes.put(num, num + libel + pos + sub);
-		lCG.save();
+	public  boolean addCompte(String num, String libel,String pos,boolean sub){
+		//ListeCompteGen lCG = new ListeCompteGen();
+		//this.listComptes = new HashMap<String, CompteGeneral>();
+		CompteGeneral cg;
+		// TODO test
+		cg = new CompteGeneralSubdivisable(num, libel,pos);
+		
+		this.listComptes.put(num, cg);
+		this.save();
 		return false;
 	}
 	public void load() {
 		try {
 			FileInputStream fichier = new FileInputStream("compte.txt");
 			ObjectInputStream ois = new ObjectInputStream(fichier);
-			this.listComptes =  (Object) ois.readObject();
+			this.listComptes =  (HashMap<String, CompteGeneral>) ois.readObject();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
