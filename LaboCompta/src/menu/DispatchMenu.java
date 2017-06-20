@@ -27,10 +27,8 @@ public class DispatchMenu {
 		menuProc();
 		subMenuProc();
 		validChoix();
-		vueCG.getAnswers();
 		if (valid.equals("oui")){
-//			System.out.println("faut venir ici");
-//			ListeCompteGen.addCompte("1234", "Youpie", 'A', true);		
+			vueCG.getAnswers();
 		} 	
 	}
 	

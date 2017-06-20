@@ -9,17 +9,9 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 
 public class ListeCompteGen {
-	Object listComptes = new HashMap();
+	Object listComptes = new HashMap<>();
 
-	public static boolean addCompte(String num, String libel,char pos,boolean sub){
-		String numero = num;
-		String libelle = libel;
-		char posi = pos;
-		boolean subd = sub;
-		System.out.println("numéro: " + numero);
-		System.out.println("libellé: " + libelle);
-		System.out.println("position: " + posi);
-		System.out.println("sub: " + subd);
+	public static boolean addCompte(String num, String libel,String pos,boolean sub){
 		
 		return false;
 	}

@@ -133,9 +133,12 @@ public class VueCG {
 		
 	}
 
-	public Object getAnswers() {
-//		answers.put(rep2, rep2 + libel + rep1 + pos);
-		return answers;
+	public void getAnswers() {
+		boolean sub = false;
+		if (rep1.equalsIgnoreCase("oui")){
+			sub = true;
+		}
+		ListeCompteGen.addCompte(rep2, libel, pos, sub);
 		
 	}
 
