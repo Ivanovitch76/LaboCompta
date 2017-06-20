@@ -1,6 +1,8 @@
 package compteGeneral;
 
-public class CompteGeneral {
+import java.io.Serializable;
+
+public class CompteGeneral implements Serializable{
 
 	private String num;
 	private String libel;

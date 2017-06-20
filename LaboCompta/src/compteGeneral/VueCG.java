@@ -138,7 +138,7 @@ public class VueCG {
 		if (rep1.equalsIgnoreCase("oui")){
 			sub = true;
 		}
-		ListeCompteGen.addCompte(rep2, libel, pos, sub);
+		this.listeCompteGen.addCompte(rep2, libel, pos, sub);
 		
 	}
 
