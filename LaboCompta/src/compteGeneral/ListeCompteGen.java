@@ -12,7 +12,10 @@ public class ListeCompteGen {
 	Object listComptes = new HashMap<>();
 
 	public static boolean addCompte(String num, String libel,String pos,boolean sub){
-		
+		ListeCompteGen lCG = new ListeCompteGen();
+		lCG.listComptes = new HashMap<String, String>();
+		lCG.listComptes.put(num, num + libel + pos + sub);
+		lCG.save();
 		return false;
 	}
 	public void load() {
