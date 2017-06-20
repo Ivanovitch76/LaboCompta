@@ -1,5 +1,6 @@
 package compteGeneral;
 
+import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -12,10 +13,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+
 public class VueCG {
 	
 	Scanner sc = new Scanner(System.in);
     Object StringV = null;
+    Object answers = new HashMap<>();
     static String rep1 = new String();
     static String rep2 = new String(); 
     static String libel = new String(); 
@@ -127,6 +130,12 @@ public class VueCG {
 
 	public void setListCompte(ListeCompteGen listeCompteGen) {
 		this.listeCompteGen = listeCompteGen;
+		
+	}
+
+	public Object getAnswers() {
+//		answers.put(rep2, rep2 + libel + rep1 + pos);
+		return answers;
 		
 	}
 
