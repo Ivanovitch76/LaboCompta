@@ -137,9 +137,8 @@ public class VueCG {
 			sub = true;
 		}
 		System.out.println("getAnwers -- > addCompte");
-		this.listeCompteGen.addCompte(rep2, libel, pos, sub);
-		System.out.println("add OK getAnswers: " + this.listeCompteGen.addCompte(rep2, libel, pos, sub));
 		addOK = this.listeCompteGen.addCompte(rep2, libel, pos, sub);
+		System.out.println("add OK getAnswers: " + addOK);
 		return addOK;
 		
 	}
