@@ -10,30 +10,38 @@ import java.util.HashMap;
 
 public class ListeCompteGen {
 	private HashMap<String, CompteGeneral> listComptes = new HashMap<>();
+	boolean existeDeja = false;
 
 	public  boolean addCompte(String num, String libel,String pos,boolean sub){
-		isValidNum(num);
-		CompteGeneral cg;
-		if (sub){
-			cg = new CompteGeneralSubdivisable(num, libel,pos);			
-		} else {
-			cg = new CompteGeneralNonSubdivisable(num, libel,pos);	
+		boolean addOK = false;
+		System.out.println("addCompte --> isUniqueNum");
+		isUniqueNum(num);
+		if (existeDeja == false) {
+			System.out.println("addCompte existe déjà?   " + existeDeja);
+			addOK = true;
+			CompteGeneral cg;
+			if (sub) {
+				cg = new CompteGeneralSubdivisable(num, libel, pos);
+			} else {
+				cg = new CompteGeneralNonSubdivisable(num, libel, pos);
+			}
+			this.listComptes.put(num, cg);
+			System.out.println("num: " + num + " cg: " + cg);
+			this.save();
 		}
-		this.listComptes.put(num, cg);
-		System.out.println("num: " + num + " cg: " + cg);
-		this.save();
-		return false;
+		return addOK;
 	}
-	private void isValidNum(String num) {
-		// TODO Auto-generated method stub
+	private boolean isUniqueNum(String num) {
+		existeDeja = this.listComptes.containsKey(num);
+		System.out.println("isUniqueNum existe déja? " + existeDeja );
+		return existeDeja;		
 		
 	}
 	public void load() {
 		try {
-			FileInputStream fichier = new FileInputStream("compte.txt");
+			FileInputStream fichier = new FileInputStream("comptes.txt");
 			ObjectInputStream ois = new ObjectInputStream(fichier);
 			this.listComptes =  (HashMap<String, CompteGeneral>) ois.readObject();
-			System.out.println("comptes: " + this.listComptes);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,7 +57,7 @@ public class ListeCompteGen {
 
 	public void save(){
 		try {
-			FileOutputStream fichier = new FileOutputStream("compte.txt");
+			FileOutputStream fichier = new FileOutputStream("comptes.txt");
 			ObjectOutputStream oos = new ObjectOutputStream(fichier);
 			oos.writeObject(this.listComptes);
 			oos.flush();

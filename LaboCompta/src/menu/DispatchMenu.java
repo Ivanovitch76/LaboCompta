@@ -28,9 +28,14 @@ public class DispatchMenu {
 		menuProc();
 		subMenuProc();
 		validChoix();
+		System.out.println("startproc validEquals");
 		if (valid.equals("oui")){
 			vueCG.getAnswers();
-		} 	
+			System.out.println("VueCG statut save: " + vueCG.getAnswers());
+			if (vueCG.getAnswers() == false){
+				vueCG.getSorry();
+			}
+		} 
 	}
 	
 	public void menuProc() {		
@@ -62,7 +67,6 @@ public class DispatchMenu {
 	}
 
 	public void validChoix() {	
-
 		valid = scan.nextLine();
 		while (!CtrlCG.isValidSub(valid)){
 			System.out.print("Veuillez entrer une réponse valide (oui/non)   ");

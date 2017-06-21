@@ -4,7 +4,7 @@ import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import main.Numero;
+import menu.DispatchMenu;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -130,18 +130,34 @@ public class VueCG {
 	}
 
 
-	public void getAnswers() {
+	public boolean getAnswers() {
+		boolean addOK = false;
 		boolean sub = false;
 		if (rep1.equalsIgnoreCase("oui")){
 			sub = true;
 		}
+		System.out.println("getAnwers -- > addCompte");
 		this.listeCompteGen.addCompte(rep2, libel, pos, sub);
+		System.out.println("add OK getAnswers: " + this.listeCompteGen.addCompte(rep2, libel, pos, sub));
+		addOK = this.listeCompteGen.addCompte(rep2, libel, pos, sub);
+		return addOK;
 		
 	}
 
 	public void setListCompte(ListeCompteGen lcg) {
 		this.listeCompteGen = lcg;
 	}
+
+	public void getSorry() {
+		DispatchMenu dM = new DispatchMenu();
+		System.out.println("Ce numéro existe déjà. Voulez-vous recommencer avec un nouveau numéro?");
+		valid = sc.nextLine();
+		getScreenRepValide();
+		if (valid.equalsIgnoreCase("oui"))
+			dM.startproc();	 
+			
+	}
+	
 	
 	
 }
