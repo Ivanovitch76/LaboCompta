@@ -25,7 +25,7 @@ public class VueCG {
     static String pos = new String(); 
 	CtrlCG ctrl = new CtrlCG(StringV);
 	String valid = new String();
-	private ListeCompteGen listeCompteGen = new ListeCompteGen(); 
+	private ListeCompteGen listeCompteGen; 
 	static StringBuilder recapBuild = new StringBuilder();
 
 	public VueCG() {
@@ -137,6 +137,10 @@ public class VueCG {
 		}
 		this.listeCompteGen.addCompte(rep2, libel, pos, sub);
 		
+	}
+
+	public void setListCompte(ListeCompteGen lcg) {
+		this.listeCompteGen = lcg;
 	}
 	
 	

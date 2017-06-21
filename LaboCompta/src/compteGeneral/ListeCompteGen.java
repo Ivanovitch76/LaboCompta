@@ -10,7 +10,6 @@ import java.util.HashMap;
 
 public class ListeCompteGen {
 	private HashMap<String, CompteGeneral> listComptes = new HashMap<>();
-	private ListeCompteGen listeCompteGen;
 
 	public  boolean addCompte(String num, String libel,String pos,boolean sub){
 		isValidNum(num);
@@ -60,8 +59,4 @@ public class ListeCompteGen {
 		}		
 	}
 	
-	public void setListCompte(ListeCompteGen listeCompteGen) {
-		this.listeCompteGen = listeCompteGen;
-		
-	}
 }

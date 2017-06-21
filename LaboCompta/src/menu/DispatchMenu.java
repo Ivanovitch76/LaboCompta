@@ -21,7 +21,7 @@ public class DispatchMenu {
 	public DispatchMenu(){
 		ListeCompteGen lcg = new ListeCompteGen();
 		lcg.load();
-		lcg.setListCompte(lcg);
+		vueCG.setListCompte(lcg);
 	}
 
 	public void startproc(){
