@@ -39,7 +39,7 @@ public class ListeCompteGen {
 	}
 	public void load() {
 		try {
-			FileInputStream fichier = new FileInputStream("comptes.txt");
+			FileInputStream fichier = new FileInputStream("compte.txt");
 			ObjectInputStream ois = new ObjectInputStream(fichier);
 			this.listComptes =  (HashMap<String, CompteGeneral>) ois.readObject();
 		} catch (FileNotFoundException e) {
@@ -57,7 +57,7 @@ public class ListeCompteGen {
 
 	public void save(){
 		try {
-			FileOutputStream fichier = new FileOutputStream("comptes.txt");
+			FileOutputStream fichier = new FileOutputStream("compte.txt");
 			ObjectOutputStream oos = new ObjectOutputStream(fichier);
 			oos.writeObject(this.listComptes);
 			oos.flush();
