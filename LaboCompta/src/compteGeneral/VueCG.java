@@ -25,7 +25,7 @@ public class VueCG {
     static String pos = new String(); 
 	CtrlCG ctrl = new CtrlCG(StringV);
 	String valid = new String();
-	private ListeCompteGen listeCompteGen; 
+	private ListeCompteGen listeCompteGen = new ListeCompteGen(); 
 	static StringBuilder recapBuild = new StringBuilder();
 
 	public VueCG() {
@@ -87,6 +87,7 @@ public class VueCG {
         
 		System.out.print("Indiquez la postion du compte au bilan : A, B, C ou D   ");
 		pos = sc.nextLine();
+		pos = pos.toUpperCase();
 		if(!ctrl.isValidPos(pos)){
 			System.out.println("Position inexistante au bilan");		
 			getScreenPosition();
@@ -137,13 +138,6 @@ public class VueCG {
 		this.listeCompteGen.addCompte(rep2, libel, pos, sub);
 		
 	}
-
-	public void setListCompte(ListeCompteGen lcg) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 	
 	
 }

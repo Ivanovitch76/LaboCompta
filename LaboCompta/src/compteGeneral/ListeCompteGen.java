@@ -21,6 +21,7 @@ public class ListeCompteGen {
 			cg = new CompteGeneralNonSubdivisable(num, libel,pos);	
 		}
 		this.listComptes.put(num, cg);
+		System.out.println("num: " + num + " cg: " + cg);
 		this.save();
 		return false;
 	}
@@ -33,6 +34,7 @@ public class ListeCompteGen {
 			FileInputStream fichier = new FileInputStream("compte.txt");
 			ObjectInputStream ois = new ObjectInputStream(fichier);
 			this.listComptes =  (HashMap<String, CompteGeneral>) ois.readObject();
+			System.out.println("comptes: " + this.listComptes);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

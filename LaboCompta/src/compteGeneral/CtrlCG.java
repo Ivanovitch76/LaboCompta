@@ -54,9 +54,9 @@ public class CtrlCG {
 
 	public boolean isValidPos(String pos) {
 		boolean posOK = true;
-		if (!(pos.equalsIgnoreCase("A")) ||
-		    pos.equalsIgnoreCase("B") ||
-		    pos.equalsIgnoreCase("C") ||
+		if (!(pos.equalsIgnoreCase("A")) &
+		    pos.equalsIgnoreCase("B") &
+		    pos.equalsIgnoreCase("C") &
 		    pos.equalsIgnoreCase("D")){
 		
 			posOK = false;
