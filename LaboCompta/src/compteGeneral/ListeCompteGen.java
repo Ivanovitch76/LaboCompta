@@ -14,10 +14,8 @@ public class ListeCompteGen {
 
 	public  boolean addCompte(String num, String libel,String pos,boolean sub){
 		boolean addOK = false;
-		System.out.println("addCompte --> isUniqueNum");
 		isUniqueNum(num);
 		if (existeDeja == false) {
-			System.out.println("addCompte existe déjà?   " + existeDeja);
 			addOK = true;
 			CompteGeneral cg;
 			if (sub) {
@@ -26,14 +24,12 @@ public class ListeCompteGen {
 				cg = new CompteGeneralNonSubdivisable(num, libel, pos);
 			}
 			this.listComptes.put(num, cg);
-			System.out.println("num: " + num + " cg: " + cg);
 			this.save();
 		}
 		return addOK;
 	}
 	private boolean isUniqueNum(String num) {
 		existeDeja = this.listComptes.containsKey(num);
-		System.out.println("isUniqueNum existe déja? " + existeDeja );
 		return existeDeja;		
 		
 	}

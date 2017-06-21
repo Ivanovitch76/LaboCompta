@@ -136,9 +136,7 @@ public class VueCG {
 		if (rep1.equalsIgnoreCase("oui")){
 			sub = true;
 		}
-		System.out.println("getAnwers -- > addCompte");
 		addOK = this.listeCompteGen.addCompte(rep2, libel, pos, sub);
-		System.out.println("add OK getAnswers: " + addOK);
 		return addOK;
 		
 	}

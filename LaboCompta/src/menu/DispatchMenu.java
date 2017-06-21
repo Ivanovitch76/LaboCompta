@@ -25,14 +25,13 @@ public class DispatchMenu {
 	}
 
 	public void startproc(){
+		boolean statut = false;
 		menuProc();
 		subMenuProc();
 		validChoix();
-		System.out.println("startproc validEquals");
 		if (valid.equals("oui")){
-			vueCG.getAnswers();
-			System.out.println("VueCG statut save: " + vueCG.getAnswers());
-			if (vueCG.getAnswers() == false){
+			statut = vueCG.getAnswers();
+			if (statut == false){
 				vueCG.getSorry();
 			}
 		} 
